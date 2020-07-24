@@ -1,0 +1,13 @@
+from django.contrib import admin
+from django.urls import path,include
+from . import views
+
+urlpatterns = [
+    path('<int:blog_id>', views.detail, name="detail"),
+    path('new',views.new, name="new"),
+    path('edit/<int:blog_id>', views.edit, name = "edit"),
+    path('update/<int:blog_id>',views.update, name = "update"),
+    path('delete/<int:blog_id>',views.delete, name="delete"),
+    path('guestbook',views.guest, name="guest"),
+    path('new_guest',views.new_guest, name="new_guest"),
+]
